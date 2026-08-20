@@ -76,6 +76,10 @@
                         <span class="stat-number" data-target="14">0</span>
                         <span class="stat-label">Area Wilsus</span>
                     </div>
+                    <div class="stat-item" id="stat-automation">
+                        <span class="stat-number" data-target="6">0</span>
+                        <span class="stat-label">Bot & Sistem AI</span>
+                    </div>
                 </div>
             </div>
             
@@ -293,61 +297,32 @@
         <div class="container">
             <div class="section-header" id="automation-header">
                 <span class="section-pretitle">The Technical Edge</span>
-                <h2 class="section-title">Inovasi Automasi Operasional Lapangan</h2>
-                <p class="section-desc">Untuk mengimbangi kompleksitas wilayah kerja, saya membangun script automasi kustom menggunakan Python, Selenium, dan Google Sheets API untuk memonitor tiket secara realtime.</p>
+                <h2 class="section-title">Inovasi Automasi Operasional & AI Ecosystem</h2>
+                <p class="section-desc">Kompilasi sistem automasi kustom, bot operasional 24/7 di cloud, dan conversational AI yang saya rancang sendiri untuk mendongkrak efisiensi dispatch tiket, quality control, dan akurasi layanan lapangan.</p>
+            </div>
+
+            <!-- Category Filter Buttons -->
+            <div class="auto-filter-container" id="auto-filter-bar">
+                <button class="auto-filter-btn active" data-filter="all">Semua Sistem (6)</button>
+                <button class="auto-filter-btn" data-filter="ai">🤖 AI & Smart Bot</button>
+                <button class="auto-filter-btn" data-filter="wfm">⚡ Dispatch & WFM</button>
+                <button class="auto-filter-btn" data-filter="qa">🛡️ Quality & Assurance</button>
             </div>
             
             <div class="automation-grid" id="automation-cards-wrapper">
-                <!-- WFM Automation Card -->
-                <div class="glass-card auto-card" id="card-wfm-bot">
-                    <div class="auto-icon-wrapper">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                <!-- 1. WhatsApp AI Support & Auto-Learning Bot -->
+                <div class="glass-card auto-card" id="card-wa-bot" data-category="ai" data-workflow-id="wa-ai">
+                    <div class="auto-icon-wrapper" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.2); color: #10b981;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><circle cx="9" cy="10" r="1"></circle><circle cx="15" cy="10" r="1"></circle></svg>
                     </div>
-                    <h3 class="auto-title">WFM Bot Scheduler</h3>
-                    <p class="auto-desc">Bot yang secara terjadwal melakukan crawling API Work Force Management (WFM) Telkom, mengambil work order baru, memetakan sesuai workzone, dan mengirimkannya ke Google Sheet tim operasional.</p>
+                    <h3 class="auto-title">WhatsApp AI Conversational & Learning Agent</h3>
+                    <p class="auto-desc">Asisten CS & Sales cerdas 24/7 berbasis Baileys + Local LLM/Gemini. Mampu belajar otomatis dari interaksi baru (Auto-Learning QA), integrasi leads ke Google Sheet, deteksi kendala teknis, serta fitur Human Agent Take-over dan auto follow-up.</p>
                     <div class="auto-tech-tags">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Requests</span>
+                        <span class="tech-tag">Node.js Baileys</span>
+                        <span class="tech-tag">Local LLM / Gemini</span>
+                        <span class="tech-tag">Auto-Learning QA</span>
                         <span class="tech-tag">Google Sheets API</span>
-                        <span class="tech-tag">Telegram API</span>
-                    </div>
-                    <span class="auto-btn">
-                        Detail Alur Kerja
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                    </span>
-                </div>
-                
-                <!-- UT online QC Automation Card -->
-                <div class="glass-card auto-card" id="card-qc-bot">
-                    <div class="auto-icon-wrapper">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                    </div>
-                    <h3 class="auto-title">QC UT Online Auditor</h3>
-                    <p class="auto-desc">Script automasi headless browser Selenium yang memonitor portal pengujian kelayakan (UT Online). Melakukan pengecekan status uji petik secara berkala, memisahkan tiket 'invalid', dan memberi notifikasi telegram instan.</p>
-                    <div class="auto-tech-tags">
-                        <span class="tech-tag">Selenium</span>
-                        <span class="tech-tag">CDP Protocol</span>
-                        <span class="tech-tag">Headless Chrome</span>
-                        <span class="tech-tag">Cron Task</span>
-                    </div>
-                    <span class="auto-btn">
-                        Detail Alur Kerja
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                    </span>
-                </div>
-                
-                <!-- Kawan Scraper Card -->
-                <div class="glass-card auto-card" id="card-kawan-scraper">
-                    <div class="auto-icon-wrapper">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                    </div>
-                    <h3 class="auto-title">Kawan Assurance Sync</h3>
-                    <p class="auto-desc">Mengintegrasikan data performa gangguan lapangan per sektor secara Month-to-Date (MTD). Memanfaatkan autentikasi cookie browser aktif untuk mengunduh laporan status jaminan kualitas layanan.</p>
-                    <div class="auto-tech-tags">
-                        <span class="tech-tag">Python Pandas</span>
-                        <span class="tech-tag">Requests Session</span>
-                        <span class="tech-tag">Cookie Sharing</span>
-                        <span class="tech-tag">GSpread</span>
+                        <span class="tech-tag">Human Takeover</span>
                     </div>
                     <span class="auto-btn">
                         Detail Alur Kerja
@@ -355,19 +330,99 @@
                     </span>
                 </div>
 
-                <!-- IBooster Bima Card (Proactive FFG) -->
-                <div class="glass-card auto-card" id="card-ibooster-bot">
+                <!-- 2. WFM Telegram 24/7 Operations Bot Engine -->
+                <div class="glass-card auto-card" id="card-wfm-bot" data-category="wfm" data-workflow-id="wfm-bot">
+                    <div class="auto-icon-wrapper">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                    </div>
+                    <h3 class="auto-title">WFM Telegram 24/7 Operations Bot Engine</h3>
+                    <p class="auto-desc">Bot scheduler cloud 24/7 (Railway) dengan multi-channel broadcast. Mengotomasi notifikasi Undispatch Insera, WeCare, Potensi PS, FailWA reminder, Xpro, FFG alert, serta command interaktif (/rekon, /unspec, /qc, /tiket, /mapping).</p>
+                    <div class="auto-tech-tags">
+                        <span class="tech-tag">Node.js Telegram</span>
+                        <span class="tech-tag">node-cron Cloud</span>
+                        <span class="tech-tag">Railway 24/7</span>
+                        <span class="tech-tag">Interactive Callbacks</span>
+                        <span class="tech-tag">Google Sheets Sync</span>
+                    </div>
+                    <span class="auto-btn">
+                        Detail Alur Kerja
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </span>
+                </div>
+                
+                <!-- 3. Real-Time Order & TTR Breach Alert Dashboard -->
+                <div class="glass-card auto-card" id="card-order-dashboard" data-category="wfm" data-workflow-id="order-dash">
+                    <div class="auto-icon-wrapper" style="background: rgba(0, 210, 255, 0.1); color: var(--secondary);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                    </div>
+                    <h3 class="auto-title">Live Order Control & TTR Breach Alert Center</h3>
+                    <p class="auto-desc">Pusat kendali operasional web real-time full-stack. Memetakan order harian per Wilsus, menghitung batas waktu SLA (Time to Resolve), dan memicu webhook alert otomatis ke grup teknisi sebelum order breach.</p>
+                    <div class="auto-tech-tags">
+                        <span class="tech-tag">Python Flask</span>
+                        <span class="tech-tag">SQLite / DB Audit</span>
+                        <span class="tech-tag">DataTables JS</span>
+                        <span class="tech-tag">Chart.js Analytics</span>
+                        <span class="tech-tag">Telegram Webhooks</span>
+                    </div>
+                    <span class="auto-btn">
+                        Detail Alur Kerja
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </span>
+                </div>
+
+                <!-- 4. Automated SCC Diagnostic & Clearance Bot -->
+                <div class="glass-card auto-card" id="card-scc-bypass" data-category="qa" data-workflow-id="scc-bot">
+                    <div class="auto-icon-wrapper" style="background: rgba(239, 68, 68, 0.1); color: #ef4444;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <h3 class="auto-title">Automated SCC Clearance & Verification Engine</h3>
+                    <p class="auto-desc">Engine otomasi Selenium untuk validasi dan clearance Service Configuration Check (SCC) tiket teknis. Dilengkapi auto-capture screenshot bukti sistem, whitelist otentikasi keamanan, dan audit log riwayat clearance.</p>
+                    <div class="auto-tech-tags">
+                        <span class="tech-tag">Python Selenium</span>
+                        <span class="tech-tag">Headless Chrome</span>
+                        <span class="tech-tag">Screenshot Audit</span>
+                        <span class="tech-tag">Whitelist Security</span>
+                        <span class="tech-tag">Flask REST</span>
+                    </div>
+                    <span class="auto-btn">
+                        Detail Alur Kerja
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </span>
+                </div>
+
+                <!-- 5. IBooster Bima Sync (Proactive FFG) -->
+                <div class="glass-card auto-card" id="card-ibooster-bot" data-category="qa" data-workflow-id="ibooster-bima">
                     <div class="auto-icon-wrapper" style="background: rgba(168, 85, 247, 0.1); border-color: rgba(168, 85, 247, 0.2); color: var(--purple-glow);">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #a855f7;"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path><path d="M2 10h4"></path><path d="M22 10h-4"></path></svg>
                     </div>
-                    <h3 class="auto-title">IBooster Bima Sync (Proactive FFG)</h3>
-                    <p class="auto-desc">Bot mitigasi preventif FFG yang memantau status port loss power secara real-time (iBooster DB Access). Jika ada kendala jaringan, bot otomatis mengabari pelanggan via WhatsApp sebelum mereka melapor (preventif), kemudian meneruskan balasan mereka ke grup Telegram teknisi agar langsung diperbaiki.</p>
+                    <h3 class="auto-title">iBooster Bima Sync (Proactive Loss Mitigation)</h3>
+                    <p class="auto-desc">Bot mitigasi preventif FFG yang memantau status port loss power secara real-time (iBooster DB Access). Jika ada kendala jaringan, bot otomatis mengabari pelanggan via WhatsApp sebelum melapor, lalu merutekan responnya ke grup Telegram teknisi.</p>
                     <div class="auto-tech-tags">
                         <span class="tech-tag">Python Selenium</span>
                         <span class="tech-tag">gspread</span>
                         <span class="tech-tag">iBooster API</span>
-                        <span class="tech-tag">WhatsApp Gateway API</span>
+                        <span class="tech-tag">WhatsApp API</span>
                         <span class="tech-tag">Telegram Bot API</span>
+                    </div>
+                    <span class="auto-btn">
+                        Detail Alur Kerja
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </span>
+                </div>
+
+                <!-- 6. Field EXIF Inspector & GPS Verification Bot -->
+                <div class="glass-card auto-card" id="card-exif-bot" data-category="qa" data-workflow-id="exif-bot">
+                    <div class="auto-icon-wrapper" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                    </div>
+                    <h3 class="auto-title">Field EXIF Inspector & GPS Verification Bot</h3>
+                    <p class="auto-desc">Bot Telegram Quality Assurance untuk verifikasi kepatuhan dokumentasi teknisi lapangan. Mampu memeriksa, mengekstrak, dan menyematkan metadata EXIF GPS lokasi koordinat dan timestamp presisi pada foto bukti instalasi ODP.</p>
+                    <div class="auto-tech-tags">
+                        <span class="tech-tag">Python Telegram Bot</span>
+                        <span class="tech-tag">Piexif / Pillow</span>
+                        <span class="tech-tag">GPS Geolocation</span>
+                        <span class="tech-tag">Metadata QA</span>
+                        <span class="tech-tag">Field Compliance</span>
                     </div>
                     <span class="auto-btn">
                         Detail Alur Kerja
@@ -667,6 +722,51 @@
             </div>
         </div>
     </section>
+
+    <!-- ==========================================================================
+         WORKFLOW DETAIL MODAL
+         ========================================================================== -->
+    <div class="workflow-modal-backdrop" id="workflow-modal" aria-hidden="true">
+        <div class="workflow-modal-box">
+            <div class="workflow-modal-header">
+                <div class="workflow-modal-header-info">
+                    <div class="workflow-modal-icon" id="modal-icon">🤖</div>
+                    <div>
+                        <h4 class="workflow-modal-title" id="modal-title">System Architecture & Workflow</h4>
+                        <div class="workflow-modal-subtitle" id="modal-subtitle">Operational Pipeline</div>
+                    </div>
+                </div>
+                <button class="workflow-modal-close" id="modal-close-btn" aria-label="Close modal">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <div class="workflow-modal-body">
+                <div>
+                    <div class="workflow-section-title">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                        Tahapan Eksekusi Otomasi
+                    </div>
+                    <div class="workflow-steps-list" id="modal-steps-container">
+                        <!-- Injected via JS -->
+                    </div>
+                </div>
+
+                <div>
+                    <div class="workflow-section-title">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                        Impact & Hasil Operasional Lapangan
+                    </div>
+                    <div class="workflow-impact-box">
+                        <div class="workflow-impact-icon" id="modal-impact-icon">🚀</div>
+                        <div class="workflow-impact-text">
+                            <h5 id="modal-impact-title">Efisiensi & Kecepatan Respon</h5>
+                            <p id="modal-impact-desc">Dampak nyata terhadap SLA dan performansi harian teknisi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- ==========================================================================
          FOOTER

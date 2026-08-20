@@ -240,6 +240,261 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize Dashboard with SLA
     renderDashboard("sla");
 
+    // ==========================================================================
+    // AUTOMATION CATEGORY FILTER & WORKFLOW MODAL ENGINE
+    // ==========================================================================
+    const autoFilterBtns = document.querySelectorAll(".auto-filter-btn");
+    const autoCards = document.querySelectorAll(".auto-card");
+
+    // Filter cards
+    autoFilterBtns.forEach(btn => {
+        btn.addEventListener("click", function() {
+            autoFilterBtns.forEach(b => b.classList.remove("active"));
+            this.classList.add("active");
+
+            const filter = this.getAttribute("data-filter");
+            autoCards.forEach(card => {
+                const cat = card.getAttribute("data-category");
+                if (filter === "all" || cat === filter) {
+                    card.style.display = "flex";
+                    setTimeout(() => {
+                        card.style.opacity = "1";
+                        card.style.transform = "translateY(0)";
+                    }, 50);
+                } else {
+                    card.style.opacity = "0";
+                    card.style.transform = "translateY(10px)";
+                    setTimeout(() => {
+                        card.style.display = "none";
+                    }, 250);
+                }
+            });
+        });
+    });
+
+    // Workflow Modal Data
+    const workflowData = {
+        "wa-ai": {
+            icon: "🤖",
+            title: "WhatsApp AI Conversational & Learning Agent",
+            subtitle: "Full-Stack Customer Engagement, Auto-Learning & Lead Capture",
+            steps: [
+                {
+                    name: "1. Real-Time Message Listener (Baileys Engine)",
+                    desc: "Menerima pesan chat masuk 24/7 melalui multi-device WhatsApp socket dengan dukungan session recovery dan reconnect otomatis."
+                },
+                {
+                    name: "2. Dual-Engine Intelligence (Local LLM + Gemini AI)",
+                    desc: "Menganalisis intensi pertanyaan pelanggan, mencari kecocokan di database dinamis Google Sheets & riwayat pertanyaan yang telah dipelajari (`learned_qa.json`)."
+                },
+                {
+                    name: "3. Auto-Lead Capture & Human Take-over",
+                    desc: "Secara otomatis mencatat data prospek/tiket ke Google Sheet. Jika pelanggan meminta staf manusia, bot otomatis pause (`takeover.js`) dan meneruskan notifikasi instan ke admin."
+                },
+                {
+                    name: "4. Autonomous Follow-Up Scheduler",
+                    desc: "Melakukan follow-up terjadwal bagi calon pelanggan yang belum menyelesaikan pendaftaran, meningkatkan rasio konversi secara otomatis."
+                }
+            ],
+            impactIcon: "📈",
+            impactTitle: "Respon Instan < 2 Detik & Zero Lead Lost",
+            impactDesc: "Mengurangi beban CS manual hingga 75% serta memastikan tidak ada pelanggan yang terlewat meskipun di luar jam kerja kantor."
+        },
+        "wfm-bot": {
+            icon: "⚡",
+            title: "WFM Telegram 24/7 Operations Bot Engine",
+            subtitle: "Multi-Scheduler Cloud Engine Deployed on Railway",
+            steps: [
+                {
+                    name: "1. Automated Cloud Cron Schedulers (Railway)",
+                    desc: "Scheduler `node-cron` bekerja 24/7 melakukan background checking berkala untuk tiket Insera, WeCare, Potensi PS, FailWA, Xpro, dan FFG."
+                },
+                {
+                    name: "2. Real-time Multi-Channel Broadcast",
+                    desc: "Menyaring tiket berdasarkan Wilsus dan urgensi, kemudian menyiarkan broadcast alert otomatis ke grup Telegram teknisi dan pengawas area."
+                },
+                {
+                    name: "3. Interactive Command & Callback Query Handlers",
+                    desc: "Teknisi dapat mengecek status tiket secara interaktif lewat inline buttons (`/rekon`, `/unspec`, `/qc`, `/tiket`, `/bima`, `/mapping`)."
+                },
+                {
+                    name: "4. Live Google Sheets Data Synchronization",
+                    desc: "Sinkronisasi dua arah dengan basis data operasional WFM Google Sheet untuk pembaruan status real-time tanpa delay."
+                }
+            ],
+            impactIcon: "⏱️",
+            impactTitle: "Percepatan Dispatching & Zero Unattended Tickets",
+            impactDesc: "Memangkas waktu respon tiket kritis dari hitungan jam menjadi hitungan menit, menjaga SLA pencapaian IOAN di atas 98%."
+        },
+        "order-dash": {
+            icon: "📊",
+            title: "Live Order Control & TTR Breach Alert Center",
+            subtitle: "Full-Stack Web Monitoring (Flask + SQLite + DataTables + Webhooks)",
+            steps: [
+                {
+                    name: "1. Live Data Ingestion & Audit Pipeline",
+                    desc: "Mengimpor dan memvalidasi order pasang baru & gangguan ke dalam basis data SQLite berkecepatan tinggi (`orders.db`)."
+                },
+                {
+                    name: "2. Real-Time Time to Resolve (TTR) Calculation",
+                    desc: "Menghitung sisa batas waktu pengerjaan setiap order berdasarkan target SLA regional dan mengelompokkannya per sektor kerja."
+                },
+                {
+                    name: "3. Interactive Analytics & Filter Dashboard",
+                    desc: "Menampilkan visualisasi chart performa, filter dinamis status order, dan deteksi antrean tiket yang menumpuk di Wilsus tertentu."
+                },
+                {
+                    name: "4. Proactive Breach Webhook Alerting",
+                    desc: "Mengirimkan peringatan otomatis ke grup Telegram Korlap sebelum tiket melewati ambang batas durasi TTR merah."
+                }
+            ],
+            impactIcon: "🎯",
+            impactTitle: "Visibilitas 100% & Pencegahan Pelanggaran SLA",
+            impactDesc: "Memberikan kendali penuh bagi manajemen untuk memantau beban 93 teknisi secara transparan dan terukur."
+        },
+        "scc-bot": {
+            icon: "🛡️",
+            title: "Automated SCC Clearance & Verification Engine",
+            subtitle: "Automated Selenium Diagnostics, Screenshot Audit & Security Whitelist",
+            steps: [
+                {
+                    name: "1. Authorized Request Validation",
+                    desc: "Mengecek ID pengirim terhadap daftar whitelist keamanan (`ALLOWED_CHAT_IDS`) untuk mencegah akses tidak berwenang."
+                },
+                {
+                    name: "2. Headless Chrome Remote Clearance",
+                    desc: "Menjalankan navigasi browser Selenium otomatis ke portal Service Configuration Check (SCC) Telkom untuk memproses clearance tiket."
+                },
+                {
+                    name: "3. Auto-Capture Proof of Clearance",
+                    desc: "Mengambil screenshot hasil eksekusi (`scc_INC...png`) sebagai bukti audit forensik yang valid."
+                },
+                {
+                    name: "4. Instant Telegram Report & Historical DB Logging",
+                    desc: "Mengirim foto bukti screenshot ke pengawas lapangan dan mencatat riwayat eksekusi ke database `history.db`."
+                }
+            ],
+            impactIcon: "⚡",
+            impactTitle: "Efisiensi Clearance 10x Lipat & Audit Trail Lengkap",
+            impactDesc: "Menghilangkan proses input manual berulang dan mempercepat proses aktivasi pelanggan baru."
+        },
+        "ibooster-bima": {
+            icon: "🔮",
+            title: "iBooster Bima Sync (Proactive Loss Mitigation)",
+            subtitle: "Automated Batch Optical Power Diagnostics & Customer Notification",
+            steps: [
+                {
+                    name: "1. Reading Candidate List (Google Sheets API)",
+                    desc: "Mengekstrak ratusan nomor layanan internet pelanggan dari spreadsheet DATA WFM (`Data Preventif FFG`)."
+                },
+                {
+                    name: "2. Intelligent Batch Analysis (iBooster Portal)",
+                    desc: "Menyisipkan batch 100 nomor ke portal diagnosa iBooster menggunakan Selenium Chrome Debugger dan memicu kalkulasi redaman optik."
+                },
+                {
+                    name: "3. Optical Loss Power Anomaly Detection",
+                    desc: "Mendeteksi port kabel optik yang mengalami penurunan sinyal drastis (loss power) sebelum pelanggan menyadari adanya gangguan."
+                },
+                {
+                    name: "4. WhatsApp Outreach & Telegram Dispatch",
+                    desc: "Mengirim pesan notifikasi preventif ke WhatsApp pelanggan dan meneruskan balasan konfirmasi jadwal langsung ke grup teknisi."
+                }
+            ],
+            impactIcon: "🛡️",
+            impactTitle: "Mitigasi Preventif & Penurunan Angka Komplain",
+            impactDesc: "Mencegah terjadinya komplain pelanggan berulang dan mengamankan indikator Field Force Guarantee (FFG)."
+        },
+        "exif-bot": {
+            icon: "📸",
+            title: "Field EXIF Inspector & GPS Verification Bot",
+            subtitle: "Telegram Bot for Geospatial Metadata & QC Compliance",
+            steps: [
+                {
+                    name: "1. Photo Ingestion & Metadata Extraction",
+                    desc: "Menerima foto dokumentasi hasil instalasi/perbaikan teknisi dari lapangan dan membaca EXIF data (tag GPS, tanggal, dan model perangkat)."
+                },
+                {
+                    name: "2. Geolocation Radius & Timestamp Validation",
+                    desc: "Mencocokkan koordinat latitude/longitude foto dengan titik ODP atau rumah pelanggan yang dituju."
+                },
+                {
+                    name: "3. EXIF Metadata Correction & Re-Injection",
+                    desc: "Menggunakan library `piexif` dan `Pillow` untuk memperbaiki metadata gambar yang hilang akibat kompresi aplikasi chat."
+                },
+                {
+                    name: "4. Quality Control Approval Stream",
+                    desc: "Menghasilkan foto tervalidasi yang siap diunggah ke sistem audit Telkom tanpa risiko reject QC."
+                }
+            ],
+            impactIcon: "✅",
+            impactTitle: "Kepatuhan Audit 100% & Anti-Fraud Dokumentasi",
+            impactDesc: "Menghilangkan potensi penolakan hasil uji petik (UT Online) akibat ketidaksesuaian titik koordinat foto."
+        }
+    };
+
+    // Modal Elements
+    const workflowModal = document.getElementById("workflow-modal");
+    const modalCloseBtn = document.getElementById("modal-close-btn");
+    const modalIcon = document.getElementById("modal-icon");
+    const modalTitle = document.getElementById("modal-title");
+    const modalSubtitle = document.getElementById("modal-subtitle");
+    const modalStepsContainer = document.getElementById("modal-steps-container");
+    const modalImpactIcon = document.getElementById("modal-impact-icon");
+    const modalImpactTitle = document.getElementById("modal-impact-title");
+    const modalImpactDesc = document.getElementById("modal-impact-desc");
+
+    const openWorkflowModal = (workflowId) => {
+        const data = workflowData[workflowId];
+        if (!data || !workflowModal) return;
+
+        modalIcon.textContent = data.icon;
+        modalTitle.textContent = data.title;
+        modalSubtitle.textContent = data.subtitle;
+        modalImpactIcon.textContent = data.impactIcon;
+        modalImpactTitle.textContent = data.impactTitle;
+        modalImpactDesc.textContent = data.impactDesc;
+
+        modalStepsContainer.innerHTML = data.steps.map(s => `
+            <div class="workflow-step-item">
+                <div class="workflow-step-dot"></div>
+                <div class="workflow-step-name">${s.name}</div>
+                <div class="workflow-step-desc">${s.desc}</div>
+            </div>
+        `).join('');
+
+        workflowModal.classList.add("active");
+        document.body.style.overflow = "hidden";
+    };
+
+    const closeWorkflowModal = () => {
+        if (!workflowModal) return;
+        workflowModal.classList.remove("active");
+        document.body.style.overflow = "";
+    };
+
+    // Attach click listeners to cards
+    autoCards.forEach(card => {
+        card.addEventListener("click", function() {
+            const wId = this.getAttribute("data-workflow-id");
+            if (wId) openWorkflowModal(wId);
+        });
+    });
+
+    if (modalCloseBtn) {
+        modalCloseBtn.addEventListener("click", closeWorkflowModal);
+    }
+
+    if (workflowModal) {
+        workflowModal.addEventListener("click", (e) => {
+            if (e.target === workflowModal) closeWorkflowModal();
+        });
+    }
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && workflowModal && workflowModal.classList.contains("active")) {
+            closeWorkflowModal();
+        }
+    });
 
     // ==========================================================================
     // CONTACT FORM HANDLER (SIMULATED SUBMIT WITH DYNAMIC FEEDBACK)

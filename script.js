@@ -352,6 +352,32 @@ document.addEventListener("DOMContentLoaded", () => {
             impactTitle: "Visibilitas 100% & Pencegahan Pelanggaran SLA",
             impactDesc: "Memberikan kendali penuh bagi manajemen untuk memantau beban 93 teknisi secara transparan dan terukur."
         },
+        "finance-bot": {
+            icon: "💰",
+            title: "Multi-Wallet Financial Intelligence & Cashflow Hub",
+            subtitle: "Full-Stack Financial Automation (Node.js + Google Apps Script + Telegram + Web Analytics)",
+            steps: [
+                {
+                    name: "1. Bi-Directional Google Sheets Web App Sync",
+                    desc: "Sinkronisasi dua arah real-time antara Google Spreadsheet dan database lokal server untuk mencatat transaksi dan saldo 10 dompet/rekening aktif."
+                },
+                {
+                    name: "2. Automated Financial Digests & Bill Reminders",
+                    desc: "Cron schedulers otomatis mengirimkan rekap mutasi harian setiap jam 21:00 WITA dan notifikasi jatuh tempo tagihan bulanan pada tanggal 5 dengan aksi 1-klik."
+                },
+                {
+                    name: "3. Interactive Web Analytics Dashboard (Chart.js)",
+                    desc: "Portal web dark-mode interaktif dilengkapi filter rentang tanggal, live search keyword, kalkulasi KPI otomatis, serta visualisasi sebaran saldo dan proporsi pengeluaran."
+                },
+                {
+                    name: "4. Natural Language Transaction Parser & Historical Search",
+                    desc: "Mencatat transaksi otomatis dari format teks bebas Telegram dan menyediakan pencarian cepat `/cari` berdasarkan kata kunci, kategori, bulan, dan tahun."
+                }
+            ],
+            impactIcon: "📈",
+            impactTitle: "Kontrol Cashflow 100% & Real-Time Net Worth Tracking",
+            impactDesc: "Mengotomasi seluruh pencatatan pengeluaran harian dan memantau aset kekayaan bersih secara akurat tanpa repot membuka excel secara manual."
+        },
         "scc-bot": {
             icon: "🛡️",
             title: "Automated SCC Clearance & Verification Engine",

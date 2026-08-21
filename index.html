@@ -77,7 +77,7 @@
                         <span class="stat-label">Area Wilsus</span>
                     </div>
                     <div class="stat-item" id="stat-automation">
-                        <span class="stat-number" data-target="6">0</span>
+                        <span class="stat-number" data-target="7">0</span>
                         <span class="stat-label">Bot & Sistem AI</span>
                     </div>
                 </div>
@@ -303,10 +303,11 @@
 
             <!-- Category Filter Buttons -->
             <div class="auto-filter-container" id="auto-filter-bar">
-                <button class="auto-filter-btn active" data-filter="all">Semua Sistem (6)</button>
+                <button class="auto-filter-btn active" data-filter="all">Semua Sistem (7)</button>
                 <button class="auto-filter-btn" data-filter="ai">🤖 AI & Smart Bot</button>
                 <button class="auto-filter-btn" data-filter="wfm">⚡ Dispatch & WFM</button>
                 <button class="auto-filter-btn" data-filter="qa">🛡️ Quality & Assurance</button>
+                <button class="auto-filter-btn" data-filter="fin">💰 Financial Analytics</button>
             </div>
             
             <div class="automation-grid" id="automation-cards-wrapper">
@@ -315,8 +316,8 @@
                     <div class="auto-icon-wrapper" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.2); color: #10b981;">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><circle cx="9" cy="10" r="1"></circle><circle cx="15" cy="10" r="1"></circle></svg>
                     </div>
-                    <h3 class="auto-title">WhatsApp AI Conversational & Learning Agent</h3>
-                    <p class="auto-desc">Asisten CS & Sales cerdas 24/7 berbasis Baileys + Local LLM/Gemini. Mampu belajar otomatis dari interaksi baru (Auto-Learning QA), integrasi leads ke Google Sheet, deteksi kendala teknis, serta fitur Human Agent Take-over dan auto follow-up.</p>
+                    <h3 class="auto-title">WhatsApp AI Conversational & Sales Agent</h3>
+                    <p class="auto-desc">Asisten CS & Sales cerdas 24/7 berbasis Baileys + Local LLM/Gemini. Mampu belajar otomatis dari interaksi baru (Auto-Learning QA), integrasi leads ke Google Sheet, klasifikasi pintar komplain/modem vs prospek PSB, serta fitur Human Take-over.</p>
                     <div class="auto-tech-tags">
                         <span class="tech-tag">Node.js Baileys</span>
                         <span class="tech-tag">Local LLM / Gemini</span>
@@ -336,13 +337,13 @@
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
                     </div>
                     <h3 class="auto-title">WFM Telegram 24/7 Operations Bot Engine</h3>
-                    <p class="auto-desc">Bot scheduler cloud 24/7 (Railway) dengan multi-channel broadcast. Mengotomasi notifikasi Undispatch Insera, WeCare, Potensi PS, FailWA reminder, Xpro, FFG alert, serta command interaktif (/rekon, /unspec, /qc, /tiket, /mapping).</p>
+                    <p class="auto-desc">Bot scheduler cloud 24/7 di Docker VPS dengan multi-channel broadcast. Dilengkapi verifikasi kepatuhan alat kerja (Alker) per sektor dengan proteksi anti-manipulasi identitas, auto-detect tiket Insera & BIMA di chat, serta metrik redaman optik.</p>
                     <div class="auto-tech-tags">
-                        <span class="tech-tag">Node.js Telegram</span>
-                        <span class="tech-tag">node-cron Cloud</span>
-                        <span class="tech-tag">Railway 24/7</span>
+                        <span class="tech-tag">Node.js Telegraf</span>
+                        <span class="tech-tag">Docker VPS Biznet</span>
+                        <span class="tech-tag">RBAC Security</span>
                         <span class="tech-tag">Interactive Callbacks</span>
-                        <span class="tech-tag">Google Sheets Sync</span>
+                        <span class="tech-tag">Optical Power QA</span>
                     </div>
                     <span class="auto-btn">
                         Detail Alur Kerja
@@ -356,11 +357,11 @@
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
                     </div>
                     <h3 class="auto-title">Live Order Control & TTR Breach Alert Center</h3>
-                    <p class="auto-desc">Pusat kendali operasional web real-time full-stack. Memetakan order harian per Wilsus, menghitung batas waktu SLA (Time to Resolve), dan memicu webhook alert otomatis ke grup teknisi sebelum order breach.</p>
+                    <p class="auto-desc">Pusat kendali operasional web real-time full-stack (LAPORANKUY). Memetakan order harian per Wilsus, menghitung sisa waktu TTR, sinkronisasi Google Sheets dua arah, serta proteksi hak akses web eksklusif via Telegram ID Admin.</p>
                     <div class="auto-tech-tags">
                         <span class="tech-tag">Python Flask</span>
+                        <span class="tech-tag">Traefik HTTPS SSL</span>
                         <span class="tech-tag">SQLite / DB Audit</span>
-                        <span class="tech-tag">DataTables JS</span>
                         <span class="tech-tag">Chart.js Analytics</span>
                         <span class="tech-tag">Telegram Webhooks</span>
                     </div>
@@ -370,7 +371,27 @@
                     </span>
                 </div>
 
-                <!-- 4. Automated SCC Diagnostic & Clearance Bot -->
+                <!-- 4. Multi-Wallet Financial Intelligence System -->
+                <div class="glass-card auto-card" id="card-finance-bot" data-category="fin" data-workflow-id="finance-bot">
+                    <div class="auto-icon-wrapper" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border-color: rgba(16, 185, 129, 0.3);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line><circle cx="16" cy="15" r="2"></circle></svg>
+                    </div>
+                    <h3 class="auto-title">Multi-Wallet Financial Intelligence & Cashflow Hub</h3>
+                    <p class="auto-desc">Sistem pembukuan & monitoring keuangan multi-dompet (10 rekening aktif) terintegrasi Google Sheets Web App, bot Telegram cerdas, auto rekap harian jam 21:00 WITA, reminder tagihan rutin tgl 5, dan Web Dashboard analitik Chart.js.</p>
+                    <div class="auto-tech-tags">
+                        <span class="tech-tag">Node.js Express</span>
+                        <span class="tech-tag">Google Apps Script</span>
+                        <span class="tech-tag">Multi-Wallet Ledger</span>
+                        <span class="tech-tag">Chart.js Dashboard</span>
+                        <span class="tech-tag">Automated Cron</span>
+                    </div>
+                    <span class="auto-btn">
+                        Detail Alur Kerja
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </span>
+                </div>
+
+                <!-- 5. Automated SCC Diagnostic & Clearance Bot -->
                 <div class="glass-card auto-card" id="card-scc-bypass" data-category="qa" data-workflow-id="scc-bot">
                     <div class="auto-icon-wrapper" style="background: rgba(239, 68, 68, 0.1); color: #ef4444;">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
@@ -390,7 +411,7 @@
                     </span>
                 </div>
 
-                <!-- 5. IBooster Bima Sync (Proactive FFG) -->
+                <!-- 6. IBooster Bima Sync (Proactive FFG) -->
                 <div class="glass-card auto-card" id="card-ibooster-bot" data-category="qa" data-workflow-id="ibooster-bima">
                     <div class="auto-icon-wrapper" style="background: rgba(168, 85, 247, 0.1); border-color: rgba(168, 85, 247, 0.2); color: var(--purple-glow);">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #a855f7;"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path><path d="M2 10h4"></path><path d="M22 10h-4"></path></svg>
@@ -410,13 +431,13 @@
                     </span>
                 </div>
 
-                <!-- 6. Field EXIF Inspector & GPS Verification Bot -->
+                <!-- 7. Field EXIF Inspector & GPS Verification Bot -->
                 <div class="glass-card auto-card" id="card-exif-bot" data-category="qa" data-workflow-id="exif-bot">
                     <div class="auto-icon-wrapper" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b;">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
                     </div>
                     <h3 class="auto-title">Field EXIF Inspector & GPS Verification Bot</h3>
-                    <p class="auto-desc">Bot Telegram Quality Assurance untuk verifikasi kepatuhan dokumentasi teknisi lapangan. Mampu memeriksa, mengekstrak, dan menyematkan metadata EXIF GPS lokasi koordinat dan timestamp presisi pada foto bukti instalasi ODP.</p>
+                    <p class="auto-desc">Bot Telegram Quality Assurance (METAFOTO SA BLC) untuk verifikasi kepatuhan dokumentasi teknisi lapangan. Mampu memeriksa, mengekstrak, dan menyematkan metadata EXIF GPS lokasi koordinat dan timestamp presisi pada foto bukti instalasi ODP.</p>
                     <div class="auto-tech-tags">
                         <span class="tech-tag">Python Telegram Bot</span>
                         <span class="tech-tag">Piexif / Pillow</span>

@@ -77,7 +77,7 @@
                         <span class="stat-label">Area Wilsus</span>
                     </div>
                     <div class="stat-item" id="stat-automation">
-                        <span class="stat-number" data-target="7">0</span>
+                        <span class="stat-number" data-target="9">0</span>
                         <span class="stat-label">Bot & Sistem AI</span>
                     </div>
                 </div>
@@ -303,10 +303,10 @@
 
             <!-- Category Filter Buttons -->
             <div class="auto-filter-container" id="auto-filter-bar">
-                <button class="auto-filter-btn active" data-filter="all">Semua Sistem (7)</button>
+                <button class="auto-filter-btn active" data-filter="all">Semua Sistem (9)</button>
                 <button class="auto-filter-btn" data-filter="ai">🤖 AI & Smart Bot</button>
                 <button class="auto-filter-btn" data-filter="wfm">⚡ Dispatch & WFM</button>
-                <button class="auto-filter-btn" data-filter="qa">🛡️ Quality & Assurance</button>
+                <button class="auto-filter-btn" data-filter="qa">🛡️ Quality & Field Audit</button>
                 <button class="auto-filter-btn" data-filter="fin">💰 Financial Analytics</button>
             </div>
             
@@ -444,6 +444,46 @@
                         <span class="tech-tag">GPS Geolocation</span>
                         <span class="tech-tag">Metadata QA</span>
                         <span class="tech-tag">Field Compliance</span>
+                    </div>
+                    <span class="auto-btn">
+                        Detail Alur Kerja
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </span>
+                </div>
+
+                <!-- 8. Sistem Monitoring, Sidak & Peta Live ODP -->
+                <div class="glass-card auto-card" id="card-sidak-odp" data-category="qa" data-workflow-id="sidak-odp">
+                    <div class="auto-icon-wrapper" style="background: rgba(14, 165, 233, 0.1); color: #0ea5e9; border-color: rgba(14, 165, 233, 0.3);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+                    </div>
+                    <h3 class="auto-title">Sistem Monitoring, Sidak & Peta Live ODP</h3>
+                    <p class="auto-desc">Platform audit fisik ODP terintegrasi (1.152 ODP) via Telegram Bot & Web Live Map (Leaflet Canvas). Fitur deteksi ODP terdekat via GPS Share Location, checklist kondisi fisik, foto bukti ODP, leaderboard teknisi, dan generator Excel perbaikan otomatis.</p>
+                    <div class="auto-tech-tags">
+                        <span class="tech-tag">Python Telegram Bot</span>
+                        <span class="tech-tag">Leaflet.js Canvas</span>
+                        <span class="tech-tag">SQLite DB (1.152 ODP)</span>
+                        <span class="tech-tag">GPS Geo-Radius</span>
+                        <span class="tech-tag">Excel Exporter</span>
+                    </div>
+                    <span class="auto-btn">
+                        Detail Alur Kerja
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </span>
+                </div>
+
+                <!-- 9. Bot Auto-Approve Lensa Inventory Telkom Akses -->
+                <div class="glass-card auto-card" id="card-lensa-bot" data-category="wfm" data-workflow-id="lensa-bot">
+                    <div class="auto-icon-wrapper" style="background: rgba(236, 72, 153, 0.1); color: #ec4899; border-color: rgba(236, 72, 153, 0.3);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                    </div>
+                    <h3 class="auto-title">Bot Auto-Approve Lensa Inventory Telkom Akses</h3>
+                    <p class="auto-desc">Bot Telegram Enterprise untuk otomatisasi multi-level approval (TL/Korlap & PM) reservasi material pada portal Lensa Inventory Telkom Akses. Dilengkapi penarikan nomor SAP otomatis, Playwright & Selenium headless engine, dan containerized Docker.</p>
+                    <div class="auto-tech-tags">
+                        <span class="tech-tag">Playwright / Selenium</span>
+                        <span class="tech-tag">Python Telegram Bot</span>
+                        <span class="tech-tag">SAP Automation</span>
+                        <span class="tech-tag">Docker Container</span>
+                        <span class="tech-tag">Role Whitelist</span>
                     </div>
                     <span class="auto-btn">
                         Detail Alur Kerja

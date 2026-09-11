@@ -455,6 +455,58 @@ document.addEventListener("DOMContentLoaded", () => {
             impactIcon: "✅",
             impactTitle: "Kepatuhan Audit 100% & Anti-Fraud Dokumentasi",
             impactDesc: "Menghilangkan potensi penolakan hasil uji petik (UT Online) akibat ketidaksesuaian titik koordinat foto."
+        },
+        "sidak-odp": {
+            icon: "📡",
+            title: "Sistem Monitoring, Sidak & Peta Live ODP",
+            subtitle: "Integrated Field Audit Platform (Telegram Bot + Leaflet Canvas Web Map + SQLite + Excel Generator)",
+            steps: [
+                {
+                    name: "1. GPS Proximity Location Matching",
+                    desc: "Teknisi cukup mengirimkan *Share Location* atau koordinat; bot secara cerdas menghitung radius terdekat ke 1.152+ database ODP di `sidak_odp.db` ketika label tiang hilang/rusak."
+                },
+                {
+                    name: "2. Physical Condition Audit & Photo Evidence",
+                    desc: "Melakukan checklist kondisi fisik (Tutup Hilang, Box Pecah, Patchcore, Terbuka) dan memvalidasi 1 unggahan foto fisik tiang ODP sebagai bukti sidak lapangan."
+                },
+                {
+                    name: "3. High-Performance Real-Time Web Map (Leaflet Canvas)",
+                    desc: "Setiap hasil sidak langsung memperbarui warna pin ODP (Hijau, Kuning, Merah, Orange) pada dashboard web peta canvas berkecepatan tinggi tanpa reload."
+                },
+                {
+                    name: "4. Automated 2-Sheet Excel Generator for Material Requests",
+                    desc: "Secara instan mengompilasi rekap kerusakan ODP menjadi berkas Excel pengajuan material perbaikan lengkap dengan hyperlink koordinat Google Maps."
+                }
+            ],
+            impactIcon: "🗺️",
+            impactTitle: "Audit Fisik 1.152+ ODP Terpetakan & Pengajuan Material Otomatis",
+            impactDesc: "Memastikan kesehatan aset jaringan distribusi optik di seluruh kabupaten, mempercepat recovery tutup ODP rusak, dan memotivasi teknisi lewat sistem leaderboard."
+        },
+        "lensa-bot": {
+            icon: "📦",
+            title: "Bot Auto-Approve Lensa Inventory Telkom Akses",
+            subtitle: "Enterprise Reservation & Material Approval Automation (Playwright + Selenium + Docker)",
+            steps: [
+                {
+                    name: "1. Role-Based Whitelist Authorization",
+                    desc: "Memvalidasi hak akses pengguna secara ketat (RBAC) untuk memastikan hanya personil berwenang (TL/Korlap & PM) yang dapat mengeksekusi approval material."
+                },
+                {
+                    name: "2. Reservation Metadata & Material Audit",
+                    desc: "Mengekstrak detail reservasi material, jumlah kuantitas, nama teknisi pemohon, dan kode project dari portal Lensa Inventory Telkom Akses."
+                },
+                {
+                    name: "3. Multi-Level Automated Clearance (Headless Browser)",
+                    desc: "Menjalankan pipeline otomatis via Playwright/Selenium headless browser untuk menyelesaikan approval multi-tahap dalam hitungan detik."
+                },
+                {
+                    name: "4. Automated SAP Number Pulling & Telegram Broadcast",
+                    desc: "Menarik nomor reservasi SAP resmi hasil approval dan menyiarkan konfirmasi instan beserta status tiket ke pemohon."
+                }
+            ],
+            impactIcon: "⚡",
+            impactTitle: "Persetujuan Material Instan < 15 Detik & Zero Bottleneck",
+            impactDesc: "Menghilangkan antrean manual persetujuan material lapangan, mempercepat kesiapan teknisi sebelum berangkat ke lokasi instalasi."
         }
     };
 

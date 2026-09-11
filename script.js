@@ -1,6 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
     
     // ==========================================================================
+    // THEME CONTROLLER (SLATE NAVY DARK & CORPORATE CLEAN LIGHT)
+    // ==========================================================================
+    const themeToggleBtn = document.getElementById("theme-toggle-btn");
+    const savedTheme = localStorage.getItem("majid-portfolio-theme");
+
+    if (savedTheme === "light") {
+        document.body.classList.add("light-theme");
+    }
+
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener("click", () => {
+            document.body.classList.toggle("light-theme");
+            const isLight = document.body.classList.contains("light-theme");
+            localStorage.setItem("majid-portfolio-theme", isLight ? "light" : "dark");
+        });
+    }
+
+    // ==========================================================================
     // DATA CONFIGURATION
     // ==========================================================================
     const regionalData = {

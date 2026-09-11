@@ -1,39 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 /* ==========================================================================
-   DESIGN TOKENS & RESET
+   DESIGN TOKENS & RESET (DEFAULT: CLEAN CORPORATE TECH LIGHT)
    ========================================================================== */
 :root {
     /* Fonts */
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Plus Jakarta Sans', sans-serif;
 
-    /* Theme: Executive Slate Navy (Default Dark Mode) */
-    --bg-dark: #0b1329;
-    --bg-dark-alt: #0f1c3f;
-    --bg-card: rgba(18, 30, 58, 0.65);
-    --bg-card-hover: rgba(28, 46, 86, 0.85);
-    --border-color: rgba(148, 163, 184, 0.15);
-    --border-hover: rgba(56, 189, 248, 0.35);
-    --glass-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+    /* Theme: Clean Corporate Tech (Default Bright Professional) */
+    --bg-dark: #f8fafc;
+    --bg-dark-alt: #f1f5f9;
+    --bg-card: rgba(255, 255, 255, 0.95);
+    --bg-card-hover: #ffffff;
+    --border-color: rgba(226, 232, 240, 0.95);
+    --border-hover: rgba(203, 213, 225, 1);
+    --glass-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
     
     /* Brand Accents */
     --primary: #ff4d24;        /* Telkom Orange-Red */
-    --primary-glow: rgba(255, 77, 36, 0.35);
-    --secondary: #00d2ff;      /* Cyan Tech */
-    --secondary-glow: rgba(0, 210, 255, 0.3);
-    --accent: #a855f7;         /* Purple leadership */
+    --primary-glow: rgba(255, 77, 36, 0.25);
+    --secondary: #0ea5e9;      /* Tech Sky Blue */
+    --secondary-glow: rgba(14, 165, 233, 0.25);
+    --accent: #8b5cf6;         /* Purple leadership */
     
     /* Semantic Colors */
     --success: #10b981;        /* Operational excellence */
     --warning: #f59e0b;
     --danger: #ef4444;
     
-    /* Text Colors */
-    --text-primary: #f1f5f9;
-    --text-secondary: #94a3b8;
+    /* Text Colors (Crisp & High Contrast) */
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
     --text-muted: #64748b;
-    --text-white: #ffffff;
+    --text-white: #0f172a;     /* Deep slate for headings */
 
     /* Spacing & Borders */
     --radius-sm: 8px;
@@ -60,9 +60,9 @@ body {
     overflow-x: hidden;
     line-height: 1.6;
     background-image: 
-        radial-gradient(circle at 15% 15%, rgba(255, 77, 36, 0.08) 0%, transparent 45%),
-        radial-gradient(circle at 85% 85%, rgba(0, 210, 255, 0.08) 0%, transparent 45%),
-        radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.05) 0%, transparent 55%);
+        radial-gradient(circle at 15% 15%, rgba(255, 77, 36, 0.05) 0%, transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(14, 165, 233, 0.05) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.03) 0%, transparent 55%);
     background-attachment: fixed;
     transition: background-color 0.4s ease, color 0.4s ease;
 }
@@ -1832,6 +1832,24 @@ footer .footer-container {
 /* ==========================================================================
    THEME TOGGLE BUTTON STYLING
    ========================================================================== */
+/* ==========================================================================
+   NAVIGATION STYLING (DEFAULT: CLEAN LIGHT THEME)
+   ========================================================================== */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+    padding: 16px 0;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+    transition: var(--transition);
+}
+
 .nav-actions {
     display: flex;
     align-items: center;
@@ -1839,23 +1857,21 @@ footer .footer-container {
 }
 
 .theme-toggle-btn {
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    color: var(--text-primary);
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    color: #475569;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: var(--transition);
-    position: relative;
-    overflow: hidden;
 }
 
 .theme-toggle-btn:hover {
-    background: var(--bg-card-hover);
+    background: #e2e8f0;
     border-color: var(--primary);
     color: var(--primary);
     box-shadow: 0 0 15px var(--primary-glow);
@@ -1863,216 +1879,277 @@ footer .footer-container {
 }
 
 .theme-toggle-btn .sun-icon {
-    display: block;
+    display: none;
 }
 
 .theme-toggle-btn .moon-icon {
-    display: none;
-}
-
-/* When in Light Theme */
-body.light-theme .theme-toggle-btn .sun-icon {
-    display: none;
-}
-
-body.light-theme .theme-toggle-btn .moon-icon {
     display: block;
     color: #4f46e5;
 }
 
-/* ==========================================================================
-   LIGHT THEME DESIGN SYSTEM (CORPORATE CLEAN TECH)
-   ========================================================================== */
-body.light-theme {
-    --bg-dark: #f8fafc;
-    --bg-dark-alt: #f1f5f9;
-    --bg-card: rgba(255, 255, 255, 0.95);
-    --bg-card-hover: #ffffff;
-    --border-color: rgba(226, 232, 240, 0.9);
-    --border-hover: rgba(203, 213, 225, 1);
-    --glass-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
-    
-    --text-primary: #0f172a;
-    --text-secondary: #475569;
-    --text-muted: #64748b;
-    --text-white: #0f172a;
-
-    background-color: var(--bg-dark);
-    color: var(--text-primary);
-    background-image: 
-        radial-gradient(circle at 15% 15%, rgba(255, 77, 36, 0.04) 0%, transparent 40%),
-        radial-gradient(circle at 85% 85%, rgba(0, 210, 255, 0.04) 0%, transparent 40%),
-        radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.03) 0%, transparent 50%);
+/* When in Dark Theme */
+body.dark-theme .theme-toggle-btn .sun-icon {
+    display: block;
+    color: #f59e0b;
 }
 
-body.light-theme nav {
-    background: rgba(255, 255, 255, 0.85);
-    border-bottom: 1px solid rgba(226, 232, 240, 0.9);
-    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
+body.dark-theme .theme-toggle-btn .moon-icon {
+    display: none;
 }
 
-body.light-theme .nav-links a {
-    color: #475569;
-}
-
-body.light-theme .nav-links a:hover,
-body.light-theme .nav-links a.active {
-    color: var(--primary);
-}
-
-body.light-theme .glass-card {
+/* Default Light Cards and Elements */
+.glass-card {
     background: #ffffff;
     border: 1px solid rgba(226, 232, 240, 0.95);
     box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+    border-radius: var(--radius-md);
+    transition: var(--transition);
 }
 
-body.light-theme .glass-card:hover {
+.glass-card:hover {
     background: #ffffff;
     border-color: rgba(255, 77, 36, 0.35);
     box-shadow: 0 16px 36px rgba(15, 23, 42, 0.09), 0 0 20px rgba(255, 77, 36, 0.08);
 }
 
-body.light-theme .hero-badge {
-    background: rgba(255, 77, 36, 0.08);
-    border: 1px solid rgba(255, 77, 36, 0.25);
-    color: var(--primary);
-}
-
-body.light-theme .text-gradient {
-    background: linear-gradient(135deg, #0f172a 30%, #334155 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-body.light-theme .btn-secondary {
+.btn-secondary {
     background: #f1f5f9;
     color: #0f172a;
     border: 1px solid #cbd5e1;
 }
 
-body.light-theme .btn-secondary:hover {
+.btn-secondary:hover {
     background: #e2e8f0;
     color: #0f172a;
     border-color: #94a3b8;
 }
 
-body.light-theme .hero-stats {
-    border-top: 1px solid #e2e8f0;
-}
-
-body.light-theme .stat-number {
+.hero-badge {
+    background: rgba(255, 77, 36, 0.08);
+    border: 1px solid rgba(255, 77, 36, 0.25);
     color: var(--primary);
 }
 
-body.light-theme .stat-label {
+.stat-number {
+    color: var(--primary);
+}
+
+.stat-label {
     color: #64748b;
 }
 
-body.light-theme .tech-tag {
+.tech-tag {
     background: #f1f5f9;
     border-color: #e2e8f0;
     color: #334155;
 }
 
-body.light-theme .auto-filter-btn {
+.auto-filter-btn {
     background: #ffffff;
     border-color: #e2e8f0;
     color: #475569;
     box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
 }
 
-body.light-theme .auto-filter-btn:hover {
+.auto-filter-btn:hover {
     background: rgba(255, 77, 36, 0.08);
     color: var(--primary);
     border-color: var(--primary);
 }
 
-body.light-theme .auto-filter-btn.active {
+.auto-filter-btn.active {
     background: var(--primary);
     border-color: var(--primary);
     color: #ffffff;
     box-shadow: 0 4px 15px var(--primary-glow);
 }
 
-body.light-theme .map-container {
+.map-container {
     background: #ffffff;
     border: 1px solid #e2e8f0;
     box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
 }
 
-body.light-theme .map-svg {
-    filter: drop-shadow(0 4px 12px rgba(15, 23, 42, 0.06));
-}
-
-body.light-theme .timeline-dot {
-    background: #ffffff;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 4px rgba(255, 77, 36, 0.15);
-}
-
-body.light-theme .contact-form input,
-body.light-theme .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
     background: #f8fafc;
     border: 1px solid #cbd5e1;
     color: #0f172a;
 }
 
-body.light-theme .contact-form input:focus,
-body.light-theme .contact-form textarea:focus {
+.contact-form input:focus,
+.contact-form textarea:focus {
     background: #ffffff;
     border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(255, 77, 36, 0.15);
 }
 
-body.light-theme .workflow-modal-box {
+.workflow-modal-box {
     background: #ffffff;
     border-color: rgba(226, 232, 240, 0.9);
     box-shadow: 0 25px 60px rgba(15, 23, 42, 0.2);
 }
 
-body.light-theme .workflow-modal-header {
+.workflow-modal-header {
     border-bottom: 1px solid #e2e8f0;
 }
 
-body.light-theme .workflow-modal-title {
+.workflow-modal-title {
     color: #0f172a;
 }
 
-body.light-theme .workflow-modal-close {
+.workflow-modal-close {
     background: #f1f5f9;
     border-color: #cbd5e1;
     color: #475569;
 }
 
-body.light-theme .workflow-modal-close:hover {
+.workflow-modal-close:hover {
     background: #fee2e2;
     color: #ef4444;
     border-color: #fca5a5;
 }
 
-body.light-theme .workflow-step-dot {
+.workflow-step-dot {
     background: #ffffff;
     border-color: var(--primary);
 }
 
-body.light-theme .workflow-step-name {
+.workflow-step-name {
     color: #0f172a;
 }
 
-body.light-theme .workflow-step-desc {
+.workflow-step-desc {
     color: #475569;
 }
 
-body.light-theme .workflow-impact-box {
-    background: rgba(16, 185, 129, 0.08);
-    border-color: rgba(16, 185, 129, 0.25);
+/* ==========================================================================
+   DARK THEME OVERRIDE (EXECUTIVE SLATE NAVY BLUE)
+   ========================================================================== */
+body.dark-theme {
+    --bg-dark: #0b1329;
+    --bg-dark-alt: #0f1c3f;
+    --bg-card: rgba(18, 30, 58, 0.7);
+    --bg-card-hover: rgba(28, 46, 86, 0.85);
+    --border-color: rgba(148, 163, 184, 0.15);
+    --border-hover: rgba(56, 189, 248, 0.35);
+    --glass-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+    
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --text-white: #ffffff;
+
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    background-image: 
+        radial-gradient(circle at 15% 15%, rgba(255, 77, 36, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(0, 210, 255, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.05) 0%, transparent 55%);
 }
 
-body.light-theme footer {
-    border-top: 1px solid #e2e8f0;
-    background: #f8fafc;
+body.dark-theme nav {
+    background: rgba(11, 19, 41, 0.85);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-body.light-theme .footer-copy {
-    color: #64748b;
+body.dark-theme .nav-links a {
+    color: var(--text-secondary);
+}
+
+body.dark-theme .nav-links a:hover,
+body.dark-theme .nav-links a.active {
+    color: #ffffff;
+}
+
+body.dark-theme .theme-toggle-btn {
+    background: rgba(18, 30, 58, 0.8);
+    border-color: rgba(148, 163, 184, 0.2);
+    color: #f1f5f9;
+}
+
+body.dark-theme .glass-card {
+    background: var(--bg-card);
+    border-color: var(--border-color);
+    box-shadow: var(--glass-shadow);
+}
+
+body.dark-theme .glass-card:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-hover);
+}
+
+body.dark-theme .btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: #f1f5f9;
+    border-color: rgba(148, 163, 184, 0.2);
+}
+
+body.dark-theme .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+body.dark-theme .text-gradient {
+    background: linear-gradient(135deg, #ffffff 30%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body.dark-theme .tech-tag {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(148, 163, 184, 0.15);
+    color: #94a3b8;
+}
+
+body.dark-theme .auto-filter-btn {
+    background: rgba(18, 30, 58, 0.6);
+    border-color: rgba(148, 163, 184, 0.15);
+    color: #94a3b8;
+}
+
+body.dark-theme .map-container {
+    background: rgba(18, 30, 58, 0.65);
+    border-color: rgba(148, 163, 184, 0.15);
+}
+
+body.dark-theme .contact-form input,
+body.dark-theme .contact-form textarea {
+    background: rgba(11, 19, 41, 0.8);
+    border-color: rgba(148, 163, 184, 0.2);
+    color: #ffffff;
+}
+
+body.dark-theme .workflow-modal-box {
+    background: linear-gradient(135deg, rgba(18, 30, 58, 0.98) 0%, rgba(11, 19, 41, 0.98) 100%);
+    border-color: rgba(255, 77, 36, 0.3);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+}
+
+body.dark-theme .workflow-modal-header {
+    border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+body.dark-theme .workflow-modal-title {
+    color: #ffffff;
+}
+
+body.dark-theme .workflow-modal-close {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(148, 163, 184, 0.2);
+    color: #94a3b8;
+}
+
+body.dark-theme .workflow-step-name {
+    color: #ffffff;
+}
+
+body.dark-theme .workflow-step-desc {
+    color: #94a3b8;
+}
+
+body.dark-theme footer {
+    border-top: 1px solid rgba(148, 163, 184, 0.15);
+    background: rgba(11, 19, 41, 0.8);
 }

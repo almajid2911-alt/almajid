@@ -1,20 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
     
     // ==========================================================================
-    // THEME CONTROLLER (SLATE NAVY DARK & CORPORATE CLEAN LIGHT)
+    // THEME CONTROLLER (DEFAULT: CLEAN CORPORATE LIGHT & SLATE NAVY DARK)
     // ==========================================================================
     const themeToggleBtn = document.getElementById("theme-toggle-btn");
     const savedTheme = localStorage.getItem("majid-portfolio-theme");
 
-    if (savedTheme === "light") {
-        document.body.classList.add("light-theme");
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark-theme");
+    } else {
+        document.body.classList.remove("dark-theme");
     }
 
     if (themeToggleBtn) {
         themeToggleBtn.addEventListener("click", () => {
-            document.body.classList.toggle("light-theme");
-            const isLight = document.body.classList.contains("light-theme");
-            localStorage.setItem("majid-portfolio-theme", isLight ? "light" : "dark");
+            document.body.classList.toggle("dark-theme");
+            const isDark = document.body.classList.contains("dark-theme");
+            localStorage.setItem("majid-portfolio-theme", isDark ? "dark" : "light");
         });
     }
 
